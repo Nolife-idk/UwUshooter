@@ -1,3 +1,3 @@
 # UwUshooter
 UWU
-KAWAII GOMENdghjsfgfdss
+KAWAII KUTE GOMENNjoooooo LES GOOOOOO
