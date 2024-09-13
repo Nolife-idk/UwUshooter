@@ -5,9 +5,9 @@
 class Player
 {
 public:
-	float radius;
 	float speed;
-	sf::CircleShape shape;
+	sf::Vector2f size;
+	sf::RectangleShape shape;
 	Player();
 	void movement();
 };

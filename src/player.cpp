@@ -4,11 +4,11 @@ using namespace sf;
 
 Player::Player()
 {
-	radius = 20;
 	speed = 10;
+	size = {50.0f, 50.0f};
 	shape.setFillColor(sf::Color::Blue);
 	shape.setPosition(100, 500);
-	shape.setRadius(radius);
+	shape.setSize(size);
 }
 void Player::movement()
 {
