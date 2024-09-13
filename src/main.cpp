@@ -1,12 +1,13 @@
-#include <SFML/Graphics.hpp>
+#include "world.hpp"
 
 using namespace sf;
 
+Vector2i window_size = {1920, 1080};
+
 int main()
 {
-    RenderWindow window(VideoMode(200, 200), "SFML works!");
-    CircleShape shape(100.f);
-    shape.setFillColor(Color::Red);
+    RenderWindow window(VideoMode(window_size.x, window_size.y), "UWUShooter");
+    World* world = new World(Vector2f(window_size));
 
     while (window.isOpen())
     {
@@ -17,8 +18,13 @@ int main()
                 window.close();
         }
 
+        //update
+        world->player->movement();
+
+        //Kresleníčko UWU
         window.clear();
-        window.draw(shape);
+        window.draw(world->bg);
+        window.draw(world->player->shape);  
         window.display();
     }
 
