@@ -26,7 +26,7 @@ int main()
             std::cout << "Game Over!" << std::endl;
         }
         
-        //Kresleníčko UWU
+        //Kresleníčko UWU wet
         window.clear();
         window.draw(world->bg);
         window.draw(world->player->shape);
