@@ -9,6 +9,6 @@ public:
 	sf::Vector2f size;
 	sf::RectangleShape shape;
 	Player();
-	void movement();
+	void movement(float dt);
 };
 

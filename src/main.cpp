@@ -1,22 +1,24 @@
 #include "world.hpp"
 #include "events.hpp"
+#include "configuration.hpp"
 #include <iostream>
-
-sf::Vector2i window_size = {1920, 1080};
 
 int main()
 {
+    sf::RenderWindow window(sf::VideoMode(conf::window_size.x, conf::window_size.y), "UWUShooter");
+    World* world = new World(sf::Vector2f(conf::window_size));
 
-    sf::RenderWindow window(sf::VideoMode(window_size.x, window_size.y), "UWUShooter");
-    World* world = new World(sf::Vector2f(window_size));
+    sf::Clock deltaClock;
 
     while (window.isOpen())
     {
         //Events
+        sf::Time dt_time = deltaClock.restart();
+        const float dt = dt_time.asSeconds();
         processEvents(window);
 
         //update
-        world->player->movement();
+        world->player->movement(dt);
         // world->Collision(Enemy, Player);
         
         if (world->player->shape.getGlobalBounds().intersects(world->enemy->shape.getGlobalBounds())) {
