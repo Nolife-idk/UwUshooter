@@ -1,13 +1,18 @@
 #include "world.hpp"
-#include "test.hpp"
+#include <iostream>
 using namespace sf;
 
 Vector2i window_size = {1920, 1080};
 
 int main()
 {
+
     RenderWindow window(VideoMode(window_size.x, window_size.y), "UWUShooter");
     World* world = new World(Vector2f(window_size));
+
+    sf::Sprite player;
+    sf::Sprite enemy;
+
 
     while (window.isOpen())
     {
@@ -21,8 +26,12 @@ int main()
         //update
         world->player->movement();
         // world->Collision(Enemy, Player);
-        Test->Colllision();
-
+        
+        if (player.getGlobalBounds().intersects(enemy.getGlobalBounds())) {
+            // End the game when collision occurs
+            window.close();
+            std::cout << "Game Over!" << std::endl;
+        }
         //Kresleníčko UWU
         window.clear();
         window.draw(world->bg);
