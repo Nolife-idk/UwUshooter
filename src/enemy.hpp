@@ -5,7 +5,8 @@
 class Enemy
 {
 public:
-	sf::Vector2f size1;
-	sf::RectangleShape shape1;
+	sf::Vector2f size;
+	sf::RectangleShape shape;
+	
 	Enemy();
 };
