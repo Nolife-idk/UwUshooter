@@ -1,6 +1,7 @@
 #pragma once
 
 #include "player.hpp"
+#include "enemy.hpp"
 
 class World
 {
@@ -9,4 +10,6 @@ public:
 	~World();
 	sf::RectangleShape bg;
 	Player* player;
+	Enemy* enemy;
+	// void Collision();
 };

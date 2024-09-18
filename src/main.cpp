@@ -1,5 +1,5 @@
 #include "world.hpp"
-
+#include "test.hpp"
 using namespace sf;
 
 Vector2i window_size = {1920, 1080};
@@ -20,11 +20,14 @@ int main()
 
         //update
         world->player->movement();
+        // world->Collision(Enemy, Player);
+        Test->Colllision();
 
         //Kresleníčko UWU
         window.clear();
         window.draw(world->bg);
-        window.draw(world->player->shape);  
+        window.draw(world->player->shape);
+        window.draw(world->enemy->shape1);    
         window.display();
     }
 

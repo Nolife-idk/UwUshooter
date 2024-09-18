@@ -21,3 +21,4 @@ void Player::movement()
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))	
 		shape.move(0.f, +1.f * speed);
 }
+
